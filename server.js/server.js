@@ -15,10 +15,11 @@ const app = express();
 
 app.use(cors());              
 app.use(express.json());      
+app.use('/api/users', require('./routes/user'));
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("Welcome to the Blog API");
+  res.send("Welcome to the Blog");
 });
 
 
@@ -29,3 +30,4 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Blog server running on http://localhost:${PORT}`);
 });
+
